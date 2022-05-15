@@ -1,0 +1,23 @@
+{
+  "name": "randnjs",
+  "version": "1.0.0",
+  "description": "Library for generating number base on some parameters",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "random",
+    "number",
+    "generate",
+    "generator"
+  ],
+  "author": "dilane3",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  },
+  "dependencies": {
+    "easy-comparator": "^1.0.3"
+  }
+}
