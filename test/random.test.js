@@ -31,6 +31,7 @@ describe("Random test", () => {
     const negativeMin = -100
 
     expect(() => Random.generate("a", "b")).toThrow("min and max parameters have to be numbers")
+    expect(() => Random.generate(10, 4)).toThrow("max value has to be greater that min value")
     expect(verification(Random.generate(min, max), min, max)).toBe(true)
     expect(Random.generate(min, max)).toBeGreaterThan(min)
     expect(Random.generate(min, max)).toBeLessThan(max)
