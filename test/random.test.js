@@ -33,9 +33,9 @@ describe("Random test", () => {
     expect(() => Random.generate("a", "b")).toThrow("min and max parameters have to be numbers")
     expect(() => Random.generate(10, 4)).toThrow("max value has to be greater that min value")
     expect(verification(Random.generate(min, max), min, max)).toBe(true)
-    expect(Random.generate(min, max)).toBeGreaterThan(min)
-    expect(Random.generate(min, max)).toBeLessThan(max)
-    expect(Random.generate(negativeMin, max)).toBeGreaterThan(negativeMin)
+    expect(Random.generate(min, max)).toBeGreaterThanOrEqual(min)
+    expect(Random.generate(min, max)).toBeLessThanOrEqual(max)
+    expect(Random.generate(negativeMin, max)).toBeGreaterThanOrEqual(negativeMin)
   })
 
   test("Generation of a list of numbers", () => {
@@ -55,8 +55,8 @@ describe("Random test", () => {
     const numbers = [1, 4, 6, 10, 12]
     const fruits = ["apple", "banana", "orange", "pineapple", "watermelon"]
 
-    expect(numbers.includes(Random.choice(numbers))).toBe(true)
-    expect(fruits.includes(Random.choice(fruits))).toBe(true)
+    expect(numbers).toContain(Random.choice(numbers))
+    expect(fruits).toContain(Random.choice(fruits))
     expect(() => Random.choice(1)).toThrow("The argument of choice() method has to be an array")
     expect(() => Random.choice([])).toThrow("The argument of choice() method must not be to be an empty array")
   })
