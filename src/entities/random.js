@@ -92,7 +92,6 @@ class Random {
   
         // Generate random index included between minIndex and maxIndex
         const randomIndex = this.generate(minIndex, maxIndex)
-        console.log(randomIndex)
   
         return array[randomIndex]
       }
