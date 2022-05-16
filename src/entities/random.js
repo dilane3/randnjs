@@ -39,8 +39,14 @@ class Random {
    */
   static generate (min = this.min, max = this.max) {
     if (typeof min === "number" && typeof max === "number") {
-      if (compare.greaterThan(max, min))
-        return Math.floor(this.initialValueGenerated() * (max + 1)) + min
+      if (compare.greaterThan(max, min)) {
+        if (min < 0) {
+          const newMax = max + Math.abs(min)
+
+          return Math.floor(this.initialValueGenerated() * (newMax + 1)) + min
+        } else 
+          return Math.floor(this.initialValueGenerated() * (max + 1)) + min
+      }
 
       throw new Error("max value has to be greater that min value")
     }
