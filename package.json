@@ -19,5 +19,6 @@
   },
   "dependencies": {
     "easy-comparator": "^1.0.3"
-  }
+  },
+  "prettier": "@company/prettier-config"
 }

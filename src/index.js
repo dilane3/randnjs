@@ -2,4 +2,4 @@
 const Random = require("./entities/random.js")
 
 // Export section
-module.exports = Random
+module.exports = { Random }

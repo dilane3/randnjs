@@ -30,8 +30,10 @@ describe("Random test", () => {
     const max = 10
     const negativeMin = -100
 
+    // Exception testing
     expect(() => Random.generate("a", "b")).toThrow("min and max parameters have to be numbers")
     expect(() => Random.generate(10, 4)).toThrow("max value has to be greater that min value")
+
     expect(verification(Random.generate(min, max), min, max)).toBe(true)
     expect(Random.generate(min, max)).toBeGreaterThanOrEqual(min)
     expect(Random.generate(min, max)).toBeLessThanOrEqual(max)
@@ -48,6 +50,8 @@ describe("Random test", () => {
 
     expect(samples.length).toEqual(length)
     expect(samples.every(item => verification(item, min, max))).toBe(true)
+
+    // Exception testing
     expect(() => Random.samples("a")).toThrow("length parameter has to be number")
   })
 
@@ -57,6 +61,8 @@ describe("Random test", () => {
 
     expect(numbers).toContain(Random.choice(numbers))
     expect(fruits).toContain(Random.choice(fruits))
+
+    // Exception testing
     expect(() => Random.choice(1)).toThrow("The argument of choice() method has to be an array")
     expect(() => Random.choice([])).toThrow("The argument of choice() method must not be to be an empty array")
   })
