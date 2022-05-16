@@ -1,2 +1,3 @@
 # randnjs
-JavaScript Library that handle some random operation on numbers and arrays
+
+JavaScript Library that handle some random operations on numbers and arrays

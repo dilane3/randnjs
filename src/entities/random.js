@@ -40,7 +40,7 @@ class Random {
   static generate (min = this.min, max = this.max) {
     if (typeof min === "number" && typeof max === "number") {
       if (compare.greaterThan(max, min))
-        return Math.floor(this.initialValueGenerated() * max + 1) + min
+        return Math.floor(this.initialValueGenerated() * (max + 1)) + min
 
       throw new Error("max value has to be greater that min value")
     }
@@ -86,6 +86,7 @@ class Random {
   
         // Generate random index included between minIndex and maxIndex
         const randomIndex = this.generate(minIndex, maxIndex)
+        console.log(randomIndex)
   
         return array[randomIndex]
       }
