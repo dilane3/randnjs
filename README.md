@@ -40,7 +40,7 @@ const { Random } = require('randnjs')
 
 1. **Generate a random number**
 
-For doing this, you have to use the **generate()** method that **Random** class offers.
+For doing this, you have to use the **generate(min?, max?)** method that **Random** class offers.
 
 ```javascript
 import { Random } from 'randnjs'
@@ -68,7 +68,7 @@ console.log(Random.generate(5, 10)) // Output: 7 for example...
 
 2. **Generate a list of numbers**
 
-To generate a list of numbers, you have to use the **samples()** method on the **Random** class.
+To generate a list of numbers, you have to use the **samples(length?, min?, max?)** method on the **Random** class.
 It takes three optional parameters
 
 **Some parameters**
@@ -103,14 +103,14 @@ console.log(samples) // output: [1, 100, 50, 12345, 243] for example
 import { Random } from 'randnjs'
 
 const samples = Random.samples(5, 1, 10)
-rt { Random } from 'randnjs'
 
-const samples = Random.samples()
-
-cons
+console.log(samples) // output: [1, 10, 3, 6, 2] for example
+```
 
 
-To select randomly one element from a list of element, you have to use the **choice()** method that the **Random** class offers.
+3. **Choose one element from a list of elements**
+
+To select randomly one element from a list of element, you have to use the **choice(array)** method that the **Random** class offers.
 
 It takes one required parameter which is a non empty array of elements. Elements here can be numbers, strings, objects and so on...
 
